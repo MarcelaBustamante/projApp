@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-ms-6">
+    <hr>
+    <div class="btn btn-outline-success d-lg-inline-block mb-3 mb-md-0 ml-md-3" (click)="crearNuevoProyecto()">Nuevo Proyecto</div>
+  </div>
+</div>
+
+     
+      <div class="row">
+        <div class="col-ms-6">
+            <hr>
+          <table class="table table-striped" [mfData]="proyectos | proyectoFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="5">
+            <thead>
+              <tr>
+                <th colspan="3">
+                  <input class="form-control" [(ngModel)]="filterQuery" placeholder="Buscar en esta lista" />
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  <mfDefaultSorter by="nombre">Nombre</mfDefaultSorter>
+                </th>
+                <th class="text-center">
+                  <mfDefaultSorter by="url">url Proyecto</mfDefaultSorter>
+                </th>          
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of mf.data; let i = index" [attr.data-index]="i" style="cursor: pointer" [routerLink]="[p.projectId]" routerLinkActive="active">
+                <td>{{i + 1}}</td>
+                <td>{{p.name}}</td>
+                <td class="text-center">{{p.projectUrl}}</td>          
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+  
