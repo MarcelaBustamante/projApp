@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm, FormGroup, FormControl } from '@angular/forms';
+
 import { Proyecto } from '../../_model/proyecto';
-import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ProyectoService } from '../../_service/proyecto.service';
 
 @Component({

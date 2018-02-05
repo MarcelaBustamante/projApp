@@ -22,4 +22,12 @@ export class ProyectoService {
   getProyecto(id:number){
     return this.http.get<Proyecto>(`${this.url}/${id}`);
   }
+
+  actualizarProyecto(nuevoProyecto:Proyecto)
+  {
+
+  }
+  agregarProyecto(nuevoProyecto:Proyecto){
+
+  }
 }

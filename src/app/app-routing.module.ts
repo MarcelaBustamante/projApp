@@ -5,14 +5,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { ProyectoComponent } from "./proyecto/proyecto.component";
 import { ContactoComponent } from './contacto/contacto.component';
 import { ProyectoEdicionComponent } from "./proyecto/proyecto-edicion/proyecto-edicion.component";
-import { ProyectoNuevoComponent } from './proyecto/proyecto-nuevo/proyecto-nuevo.component';
 import { ProyectoInicioComponent } from './proyecto/proyecto-inicio/proyecto-inicio.component';
 
 
 const appRoutes: Routes = [
     { path: "proyecto", component: ProyectoComponent,children:[
         { path: '', component:ProyectoInicioComponent},
-        { path: 'nuevo', component: ProyectoNuevoComponent},
+        { path: 'nuevo', component: ProyectoEdicionComponent},
         { path: ':id/editar',component: ProyectoEdicionComponent },
         { path: ':id', component: ProyectoDetalleComponent}]},
     { path: "contacto", component: ContactoComponent },

@@ -16,7 +16,6 @@ import { ProyectoEdicionComponent } from './proyecto/proyecto-edicion/proyecto-e
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTableModule } from 'angular2-datatable';
 import { ProyectoFilterPipe } from './_pipe/proyecto-filter.pipe';
-import { ProyectoNuevoComponent } from './proyecto/proyecto-nuevo/proyecto-nuevo.component';
 import { ProyectoInicioComponent } from './proyecto/proyecto-inicio/proyecto-inicio.component';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +31,6 @@ import { HttpClientModule } from '@angular/common/http';
     ProyectoDetalleComponent,
     ProyectoEdicionComponent,
     ProyectoFilterPipe,
-    ProyectoNuevoComponent,
     ProyectoInicioComponent
   ],
   imports: [
