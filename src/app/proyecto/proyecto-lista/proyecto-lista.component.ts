@@ -1,7 +1,8 @@
+import { Proyecto } from './../../_model/proyecto';
 import { Router,ActivatedRoute } from '@angular/router';
 import { ProyectoService } from './../../_service/proyecto.service';
 import { Component, OnInit } from '@angular/core';
-import { Proyecto } from '../../_model/proyecto';
+
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Proyecto } from '../../_model/proyecto';
   styleUrls: ['./proyecto-lista.component.css']
 })
 export class ProyectoListaComponent implements OnInit {
-    proyectos: Proyecto[];
+    proyectos: Proyecto[] ;
     filterQuery= "";
 
   constructor(private proyectoService: ProyectoService,
@@ -18,10 +19,10 @@ export class ProyectoListaComponent implements OnInit {
               private route:ActivatedRoute) { }
 
   ngOnInit() {
-    //this.proyectos = this.proyectoService.getProyecto();
-    this.proyectoService.getProyectos().subscribe(data =>{
-    this.proyectos=data;
-    console.log(this.proyectos);});
+  // this.proyectos = this.proyectoService.getProyectos();
+   this.proyectoService.getProyectos().subscribe(data =>{
+     this.proyectos=data;
+   });
   }
 
   crearNuevoProyecto(){

@@ -1,3 +1,5 @@
+import { LoginGuard } from './_service/login-guard.service';
+import { LoginService } from './_service/login.service';
 import { ProyectoService } from './_service/proyecto.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,8 +19,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTableModule } from 'angular2-datatable';
 import { ProyectoFilterPipe } from './_pipe/proyecto-filter.pipe';
 import { ProyectoInicioComponent } from './proyecto/proyecto-inicio/proyecto-inicio.component';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProyectoDetalleComponent,
     ProyectoEdicionComponent,
     ProyectoFilterPipe,
-    ProyectoInicioComponent
+    ProyectoInicioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +45,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     DataTableModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AlertModule.forRoot()
   ],
-  providers: [ProyectoService],
+  providers: [ProyectoService,LoginService,LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

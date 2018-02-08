@@ -12,7 +12,7 @@ import { ProyectoService } from '../../_service/proyecto.service';
 })
 export class ProyectoDetalleComponent implements OnInit {
   proyecto: Proyecto;
-  id:number;
+  id:number;                                    
   constructor(private proyectoService: ProyectoService,
               private route: ActivatedRoute,
               private router:Router) { }

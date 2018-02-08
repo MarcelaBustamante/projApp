@@ -38,7 +38,7 @@ export class ProyectoEdicionComponent implements OnInit {
     this.edicion?this.titulo="Editar Proyecto":this.titulo="Nuevo Proyecto"  }
 
   operar() {
-    let nuevoProyecto = new Proyecto(this.form.value['id'], this.form.value['nombre'], this.form.value['urlProyecto'],null);
+    let nuevoProyecto = new Proyecto(this.form.value['id'], this.form.value['nombre'], this.form.value['urlProyecto']);
 
     if (this.edicion) {
       this.proyectoService.actualizarProyecto(nuevoProyecto)
@@ -50,11 +50,12 @@ export class ProyectoEdicionComponent implements OnInit {
   private initForm() {
     if (this.edicion) {
       this.proyectoService.getProyecto(this.id).subscribe(data => {
+        console.log(data);
         let id = 0;
         let nombre = '';
         let urlProyecto = '';
         id = data.projectId;
-        nombre = data.name;
+        nombre = data.jobname;
         urlProyecto = data.projectUrl;
         this.form = new FormGroup({
           'id': new FormControl(id),

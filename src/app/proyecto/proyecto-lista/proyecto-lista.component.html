@@ -26,7 +26,7 @@
     <tbody>
       <tr *ngFor="let p of mf.data; let i = index" [attr.data-index]="i" style="cursor: pointer" [routerLink]="[p.projectId]" routerLinkActive="active">
         <td>{{i + 1}}</td>
-        <td>{{p.name}}</td>
+        <td>{{p.jobname}}</td>
         <td class="text-center">{{p.projectUrl}}</td>          
       </tr>
     </tbody>
